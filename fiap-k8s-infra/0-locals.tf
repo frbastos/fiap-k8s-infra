@@ -6,4 +6,7 @@ locals {
   zone2       = "us-east-1b"
   eks_name    = "fiap-eks-cluster"
   eks_version = "1.30"
+  s3_rds_name = "terraform-state-rds"
+  s3_eks_name = "terraform-state-eks"
+  role_arn = "arn:aws:iam::905418335842:role/LabRole"
 }

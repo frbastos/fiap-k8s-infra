@@ -1,6 +1,5 @@
 provider "aws" {
   region  = local.region
-  profile = local.profile
 }
 
 terraform {
@@ -12,4 +11,11 @@ terraform {
         version = "~>5.79"
     }
   }
+
+  backend "s3" {
+    bucket = "fiap-terraform-state-eks"
+    region = "us-east-1"
+    key = "state/terraform.tfstate"
+  }
 }
+

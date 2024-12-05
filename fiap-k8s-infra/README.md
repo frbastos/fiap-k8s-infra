@@ -27,19 +27,6 @@ export AWS_SECRET_ACCESS_KEY="sua-secret-access-key"
 export AWS_DEFAULT_REGION="us-east-1"
 ```
 
----
-
-## Estrutura do Projeto
-
-```plaintext
-FIAP-K8S-INFRA/
-├── main.tf        # Arquivo principal que define o provider e organiza os recursos
-├── variables.tf   # Declaração das variáveis do projeto
-├── vpc.tf         # Configura a VPC, subnets, IGW, NAT e tabelas de rotas
-├── README.md      # Instruções de execução do projeto
-```
-
----
 
 ## Comandos do Terraform
 
@@ -98,21 +85,6 @@ Apply complete! Resources: 5 added, 0 changed, 0 destroyed.
 
 ---
 
-### **5. terraform output**
-Exibe os valores definidos nos outputs do projeto após a aplicação bem-sucedida. Por exemplo, IDs de VPC ou subnets criados.
-
-```bash
-terraform output
-```
-
-Exemplo de saída:
-```plaintext
-vpc_id = "vpc-0abcd1234efgh5678"
-public_subnet_id = "subnet-0123456789abcdef"
-```
-
----
-
 ### **6. terraform destroy**
 Remove todos os recursos criados pelo Terraform. O comando solicitará confirmação antes de destruir os recursos.
 
@@ -162,6 +134,3 @@ Siga as etapas abaixo para configurar e executar o projeto:
    ```bash
    terraform destroy
    ```
-
-
-terraform init && terraform validate && terraform plan && terraform apply
