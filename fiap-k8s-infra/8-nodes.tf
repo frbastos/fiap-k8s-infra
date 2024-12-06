@@ -35,18 +35,18 @@ resource "aws_eks_node_group" "general" {
   node_role_arn   = local.role_arn
 
   subnet_ids = [
-    # aws_subnet.private_zone1.id,
-    # aws_subnet.private_zone2.id,
-    aws_subnet.public_zone1.id,
-    aws_subnet.public_zone2.id
+    aws_subnet.private_zone1.id,
+    aws_subnet.private_zone2.id,
+    # aws_subnet.public_zone1.id,
+    # aws_subnet.public_zone2.id
   ]
 
   capacity_type  = "ON_DEMAND"
   instance_types = ["t3.medium"]
 
   scaling_config {
-    desired_size = 2
-    max_size     = 2
+    desired_size = 1
+    max_size     = 3
     min_size     = 0
   }
 
@@ -57,17 +57,6 @@ resource "aws_eks_node_group" "general" {
   labels = {
     role = "general"
   }
-
-  # taint {
-  #   key    = "team"
-  #   value  = "devops"
-  #   effect = "NO_SCHEDULE"
-  # }
-
-  # launch_template {
-  #   name    = aws_launch_template.eks-with-disks.name
-  #   version = aws_launch_template.eks-with-disks.latest_version
-  # }
 
   depends_on = [
     # aws_iam_role_policy_attachment.nodes-AmazonEKSWorkerNodePolicy,
