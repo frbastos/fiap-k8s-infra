@@ -1,0 +1,29 @@
+# Ignorar a pasta de configurações locais do Terraform
+.terraform/
+.terraform.lock.hcl
+
+# Ignorar arquivos de estado e planos de execução
+terraform.tfstate
+terraform.tfstate.backup
+*.tfplan
+
+# Ignorar variáveis sensíveis
+*.tfvars
+*.tfvars.json
+
+# Ignorar logs e arquivos temporários
+crash.log
+*.log
+
+# Ignorar arquivos de override
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignorar backups criados automaticamente
+*.backup
+
+# Ignorar metadados de CLI
+.terraformrc
+terraform.rc
